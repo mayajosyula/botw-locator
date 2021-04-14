@@ -14,7 +14,7 @@ bs = BeautifulSoup(html, 'html.parser')
 images = bs.find_all('img', {'src':re.compile('.jpg')})
 urls = []
 for image in images:
-	# Filter out maps
+    # Filter out maps
     if "map" not in image['src'] and "site" not in image['src']:
         urls.append(image['src'])
 for url in urls:
